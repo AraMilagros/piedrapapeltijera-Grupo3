@@ -3,22 +3,22 @@ export default function(props){
     const [numRandom,setNumRandom]= useState(null);// numero ramdom de la Pc
     const [num,setNum]=useState(null);// numero que elije el usuario
     const [mensaje,setMensaje]=useState("Esperando elección...");
-    const [puntajeUser,setPuntajeUser]=useState(0);
-    const [puntajePc,setPuntajepc]=useState(0);
-    const [imagenUser,setImagenUser]=useState(3);
+    const [puntajeUser,setPuntajeUser]=useState(0);//inicializando el puntaje del usuario a 0
+    const [puntajePc,setPuntajepc]=useState(0);//inicializando el puntaje de la PC a 0
+    const [imagenUser,setImagenUser]=useState(3);//inicializando la img de none por defecto
     const [imagenPc,setImagenPc]=useState(3);
 
     const generarNumRandom=()=>{
-        setNumRandom(Math.floor(Math.random()*3));
+        setNumRandom(Math.floor(Math.random()*3));//Math.floor() redondea hacia abajo un num entero
     }
     
     const jugar = () => {
         cambiarImagen();
-        switch (num) {
+        switch (num) {//esto representa la opcion que el user eligio
             
             case 0:// piedra
-                switch (numRandom) {
-                    case 0:
+                switch (numRandom) {//Esto representa la opcion que se generó para la PC
+                    case 0://Cambia el msj dependiendo de cada situacion
                         setMensaje("Empate");
                         break;
                     case 1:
@@ -68,7 +68,7 @@ export default function(props){
         
     }
     const cambiarImagen=()=>{// función que cambia las imagenes despues de apretar Jugar
-        setImagenUser(num);
+        setImagenUser(num);//antes de jugar comienza con una img none tant para user como la PC
         setImagenPc(numRandom);
     }
     return(
@@ -97,6 +97,10 @@ export default function(props){
                     <h1>{mensaje}</h1>
 
                     <div className="botones-juego">
+                        {/* cada button posee una img de piedra, papel y tijera, las cuales estan representadas
+                            por los numeros 0 1 y 2 respectivamente
+                            Cuando el evento onClick sea llamada se actualizara el setNum con la opcion que el user elija
+                            a la vez que se llamara la funcion generarNumRandom para obtener la opcion por parte de la PC */}
                         <button onClick={() => { setNum(0), generarNumRandom() }}><img src={props.img[0]} alt="rock" width={100} /></button>
                         <button onClick={() => { setNum(1), generarNumRandom() }}><img src={props.img[1]} alt="paper" width={100} /></button>
                         <button onClick={() => { setNum(2), generarNumRandom() }}><img src={props.img[2]} alt="scissors" width={100} /></button>

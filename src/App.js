@@ -1,7 +1,9 @@
 
+import Juego from "./pages/Juego";
+
 function App(){
     return(
-        <h1>HOLA MUNDO </h1>
+        <Juego/>
     );
 
 }

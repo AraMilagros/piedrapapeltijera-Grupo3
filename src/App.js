@@ -1,9 +1,19 @@
+import Header from './componentes/Header';
 
-import Juego from "./pages/Juego";
+import Home from './componentes/Home';
+import Desarrolladores from './componentes/Desarrolladores';
+import Juego from './componentes/Juego';
 
-function App(){
-    return(
-        <Juego/>
+function App() {
+    return (
+        <>
+            <Header/>
+            
+
+        </>
+
+
+
     );
 
 }

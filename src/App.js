@@ -14,6 +14,14 @@ function App() {
 
 
 
+<<<<<<< HEAD
+=======
+import Juego from "./pages/Juego";
+
+function App(){
+    return(
+        <Juego/>
+>>>>>>> d0c9704c89ba4193e3c112dab0439ce40a7ddf68
     );
 
 }

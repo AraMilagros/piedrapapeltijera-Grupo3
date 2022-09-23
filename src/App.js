@@ -1,8 +1,11 @@
-import Principal from './pages/Principal';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Header from './components/Header';
+import JuegoCvC from './components/juego/JuegoCvC';
+import Home from './pages/Home';
 
 function App() {
     return (
-        <div class="container">
+        <div className="container">
             {/* Este componente muestra la vista de Home
         Dentro del componente Principal se llama a su vez los componentes de Header y los 
         componentes segun lo que eliga el usuario. Por ejemplo:
@@ -11,7 +14,20 @@ function App() {
             o si quiere ver quiénes desarrollaron el juego, se llamara el componente respectivo
             
             Esto se logra con router*/}
-            <Principal/>
+            {/* Este seria el nav */}
+            <Header/>
+            <Router>
+                <Routes>
+                    {/* Aqui se llama el componente que muestra el inicio del juego..la portada */}
+                    <Route path="/" element={<Home/>}></Route>
+                    {/* Aqui iria el componente que muestra el juego
+                      #se debe aumentar el atributo de element={<componente/>} */}
+                    <Route path="/jugar" element={<JuegoCvC></JuegoCvC>}></Route>
+                    {/* Y aqui iria el componente que muestra las cards de los desarrolladores
+                        #se debe aumentar el atributo de element={<componente/>} */}
+                    <Route path="/info"></Route>
+                </Routes>
+            </Router>
             
         </div>
 

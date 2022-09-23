@@ -1,7 +1,19 @@
+import Header from './componentes/Header';
 
-function App(){
-    return(
-        <h1>HOLA MUNDO </h1>
+import Home from './componentes/Home';
+import Desarrolladores from './componentes/Desarrolladores';
+import Juego from './componentes/Juego';
+
+function App() {
+    return (
+        <>
+            <Header/>
+            
+
+        </>
+
+
+
     );
 
 }

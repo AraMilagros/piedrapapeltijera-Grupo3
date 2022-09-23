@@ -1,7 +1,7 @@
 
 function Header() {
     return (
-        <nav class="m-3">
+        <nav className="m-3">
             <ul className="nav justify-content-center nav-tabs" role="tablist ">
                 <li className="nav-item" role="presentation ">
                     <a href="/" className="nav-link active" role="button">Inicio</a>

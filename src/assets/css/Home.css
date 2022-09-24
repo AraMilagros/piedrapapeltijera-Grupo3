@@ -1,0 +1,23 @@
+
+.portada{
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    padding: 20px;
+}
+
+.portada img{
+    width: 400px;
+    height: 400px;
+}
+.contenedor-btn{
+    margin:30px;
+}
+
+.contenedor-btn a{
+    margin-left: 1rem;
+}

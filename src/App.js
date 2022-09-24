@@ -4,6 +4,9 @@ import JuegoCvC from './components/juego/JuegoCvC';
 import Desarrolladores from './pages/Desarrolladores';
 import Home from './pages/Home';
 import '../src/assets/css/Home.css'
+import ErrorPage from './pages/ErrorPage';
+import Juego from './pages/Juego';
+
 
 
 function App() {
@@ -25,10 +28,12 @@ function App() {
                     <Route path="/" element={<Home/>}></Route>
                     {/* Aqui iria el componente que muestra el juego
                       #se debe aumentar el atributo de element={<componente/>} */}
-                    <Route path="/jugar" element={<JuegoCvC></JuegoCvC>}></Route>
+                    <Route path="/jugar/*" element={<Juego/>}></Route>
                     {/* Y aqui iria el componente que muestra las cards de los desarrolladores
                         #se debe aumentar el atributo de element={<componente/>} */}
                     <Route path="/info" element={<Desarrolladores/>}></Route>
+                    {/* Ruta que muestra una pagina de error cuando no encuentra la pagina */}
+                    <Route path='*' element={<ErrorPage/>}></Route>
                 </Routes>
             </Router>
             

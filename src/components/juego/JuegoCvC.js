@@ -98,7 +98,7 @@ const ImgEleccionJugador = (props) => {
     props.jugador.eleccion === "tijera") {
     imagen = "../img/scissors.png";
   }else{
-    imagen = "none"
+    imagen = "../img/none.png"
   }
 //muestra la imagen
   return (
@@ -118,7 +118,7 @@ const ImgEleccionJugador2 = (props) => {
     props.jugador2.eleccion === "tijera") {
     imagen = "../img/scissors.png";
   }else{
-    imagen = "none";
+    imagen = "../img/none.png";
   }
 
   return (

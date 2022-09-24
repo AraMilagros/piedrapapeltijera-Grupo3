@@ -1,9 +1,9 @@
 import React from "react";
-import Card from "./Card";
+import Card from "../components/desarrolladores/Card";
 
-import image1 from "./image-Desarrolladores/image1.jpg";
+import image1 from "../assets/img/desarrolladores/image1.jpg";
 
-import '../assets/css/card.css'
+import '../assets/css/card.css';
 
 const desarrollador = [
   {

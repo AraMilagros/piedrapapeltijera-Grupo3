@@ -9,72 +9,8 @@ export default function JuegoPvC(props){
     const [imagenUser,setImagenUser]=useState(3);//inicializando la img de none por defecto
     const [imagenPc,setImagenPc]=useState(3);
 
-    var seleccionoJugada=false;
     const generarNumRandom=()=>{
-        seleccionoJugada=true;
         setNumRandom(Math.floor(Math.random()*3));//Math.floor() redondea hacia abajo un num entero
-    }
-    
-    const jugar = () => {
-        if (seleccionoJugada) {
-            cambiarImagen();
-            switch (num) {//esto representa la opcion que el user eligio
-
-                case 0:// piedra
-                    switch (numRandom) {//Esto representa la opcion que se generó para la PC
-                        case 0://Cambia el msj dependiendo de cada situacion
-                            setMensaje("Empate");
-                            break;
-                        case 1:
-                            setMensaje("Perdiste");
-                            setPuntajePc(puntajePc + 1);
-                            break;
-                        case 2:
-                            setMensaje("Ganaste");
-                            setPuntajeUser(puntajeUser + 1);
-                            break;
-                    }
-                    break;
-                case 1://papel
-                    switch (numRandom) {
-                        case 0:
-                            setMensaje("Ganaste");
-                            setPuntajeUser(puntajeUser + 1);
-                            break;
-                        case 1:
-                            setMensaje("Empate");
-                            break;
-                        case 2:
-                            setMensaje("Perdiste");
-                            setPuntajePc(puntajePc + 1);
-                            break;
-                    }
-                    break;
-                case 2://tijera
-                    switch (numRandom) {
-                        case 0:
-                            setMensaje("Perdiste");
-                            setPuntajePc(puntajePc + 1);
-                            break;
-                        case 1:
-                            setMensaje("Ganaste");
-                            setPuntajeUser(puntajeUser + 1);
-                            break;
-                        case 2:
-                            setMensaje("Empate");
-                            break;
-                    }
-                    break;
-                default:
-                    setMensaje("Esperando elección...");
-                    break;
-            }
-        }
-        seleccionoJugada=false;
-    }
-    const cambiarImagen=()=>{// función que cambia las imagenes despues de apretar Jugar
-        setImagenUser(num);//antes de jugar comienza con una img none tant para user como la PC
-        setImagenPc(numRandom);
     }
     const reiniciarJuego=()=>{
         setNumRandom(3);
@@ -82,6 +18,66 @@ export default function JuegoPvC(props){
         setPuntajePc(0);
         setPuntajeUser(0);
     }
+    const jugar = () => {
+        cambiarImagen();
+        switch (num) {//esto representa la opcion que el user eligio
+            
+            case 0:// piedra
+                switch (numRandom) {//Esto representa la opcion que se generó para la PC
+                    case 0://Cambia el msj dependiendo de cada situacion
+                        setMensaje("Empate");
+                        break;
+                    case 1:
+                        setMensaje("Perdiste");
+                        setPuntajePc(puntajePc+1);
+                        break;
+                    case 2:
+                        setMensaje("Ganaste");
+                        setPuntajeUser(puntajeUser+1);
+                        break;
+                }
+                break;
+            case 1://papel
+                switch (numRandom) {
+                    case 0:
+                        setMensaje("Ganaste");
+                        setPuntajeUser(puntajeUser+1);
+                        break;
+                    case 1:
+                        setMensaje("Empate");
+                        break;
+                    case 2:
+                        setMensaje("Perdiste");
+                        setPuntajePc(puntajePc+1);
+                        break;
+                }
+                break;
+            case 2://tijera
+                switch (numRandom) {
+                    case 0:
+                        setMensaje("Perdiste");
+                        setPuntajePc(puntajePc+1);
+                        break;
+                    case 1:
+                        setMensaje("Ganaste");
+                        setPuntajeUser(puntajeUser+1);
+                        break;
+                    case 2:
+                        setMensaje("Empate");
+                        break;
+                }
+                break;
+            default:
+                setMensaje("Esperando elección...");
+                break;
+        }
+        
+    }
+    const cambiarImagen=()=>{// función que cambia las imagenes despues de apretar Jugar
+        setImagenUser(num);//antes de jugar comienza con una img none tant para user como la PC
+        setImagenPc(numRandom);
+    }
+    
     return(
         <>
             <div className="main-juego">

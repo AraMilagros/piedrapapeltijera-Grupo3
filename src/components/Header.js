@@ -10,7 +10,7 @@ function Header() {
                     <a href="/jugar" className="nav-link active " role="button">¡A jugar!</a>
                 </li>
                 <li className="nav-item" role="presentation">
-                    <a href="/desarrolladores" className="nav-link active" role="button">¿Quienes somos?</a>
+                    <a href="/info" className="nav-link active" role="button">¿Quienes somos?</a>
                 </li>
             </ul>
         </nav>

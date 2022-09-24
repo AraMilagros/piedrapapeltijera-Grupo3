@@ -11,7 +11,7 @@ import Juego from './pages/Juego';
 
 function App() {
     return (
-        <div className="container2">
+        <div className="container">
             {/* Este componente muestra la vista de Home
         Dentro del componente Principal se llama a su vez los componentes de Header y los 
         componentes segun lo que eliga el usuario. Por ejemplo:

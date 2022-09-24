@@ -1,18 +1,15 @@
 import React from "react";
 import Card from "../components/desarrolladores/Card";
 
-<<<<<<< HEAD
-import image1 from "../assets/img/desarrolladores/image1.jpg";
-=======
+//import image1 from "../assets/img/desarrolladores/image1.jpg";
 import "../assets/css/card.css";
 
-import image1 from "./image-Desarrolladores/image1.jpg";
-import image2 from "./image-Desarrolladores/image2.jpg";
-import image3 from "./image-Desarrolladores/image3.jpg";
-import image4 from "./image-Desarrolladores/image4.jpg";
-import image5 from "./image-Desarrolladores/image5.jpg";
-import image6 from "./image-Desarrolladores/image6.jpg";
->>>>>>> main
+import image1 from "../assets/img/desarrolladores/image1.jpg";
+import image2 from "../assets/img/desarrolladores/image2.jpg";
+import image3 from "../assets/img/desarrolladores/image3.jpg";
+import image4 from "../assets/img/desarrolladores/image4.jpg";
+import image5 from "../assets/img/desarrolladores/image5.jpg";
+import image6 from "../assets/img/desarrolladores/image6.jpg";
 
 import '../assets/css/card.css';
 

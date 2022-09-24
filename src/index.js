@@ -6,7 +6,9 @@ import './assets/css/mainJuego.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <App></App>
+  <div>
+    <App></App>
+  </div>
 );
 
 // reportWebVitals();

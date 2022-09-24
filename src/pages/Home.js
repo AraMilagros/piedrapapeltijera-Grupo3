@@ -3,7 +3,6 @@ import '../assets/css/Home.css';
 export default function Home() {
   return (
     <>
-      <div className='Hola'>
         <div className="portada shadow p-3 mb-5 bg-white rounded">
           <h1>PIEDRA PAPEL O TIJERAS</h1>
           <img src="./img/PPT.gif" alt="" />
@@ -12,7 +11,6 @@ export default function Home() {
             <a class="btn btn-info" href="/info">¿Quiénes somos?</a>
           </div>
         </div>
-      </div>
     </>
   );
 }

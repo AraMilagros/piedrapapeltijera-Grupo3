@@ -14,7 +14,7 @@ const Opcion = (props) => {
     //devuelve un div con 2 botones, el 1ro ejecuta el método IniciarJuego que recibe como parámetro
     //el 2do ejecuta el método reiniciarJuego que también recibe como parámetro
     return(
-        <div>
+        <div className="opcion">
             <button className="btn btn-danger" onClick={props.jugar}>Jugar</button>
             <button className="btn btn-info" onClick={props.reiniciar}>Reiniciar</button>
         </div>

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Opcion from "./Opcion";
-// import "./JuegoCvC.css";
+import '../../assets/css/juegoCvC.css';
 
 //Se declaran las variables que guardan los puntajes de los jugadores
 let scorePlayer1 = 0;
 let scorePlayer2 = 0;
+let empates = 0;
 
 function JuegoCvC() {
   //Se declaran las variables que guardan las elecciones de cada jugador, ambas son useState
@@ -48,6 +49,7 @@ function JuegoCvC() {
     setEleccionJugador2("none");
     scorePlayer1 = 0;
     scorePlayer2 = 0;
+    empates = 0;
   }
   //Este método le da un valor aleatorio a la elección del jugador 2
   const eleccionRival = () => {
@@ -102,7 +104,7 @@ const ImgEleccionJugador = (props) => {
   }
 //muestra la imagen
   return (
-    <img src={[imagen]} alt="PPT.gif"/>
+    <img src={[imagen]} alt="none" width={200} height={200}/>
   );
 };
 //Esta función hace lo mismo que la anterior pero para el jugador 2. Mi idea era usar el método anterior y enviarle como props a la elección del jugador2 pero daba errores y tuve que hacer otra función.
@@ -122,7 +124,7 @@ const ImgEleccionJugador2 = (props) => {
   }
 
   return (
-    <img src={[imagen]} alt="PPT.gif"/>
+    <img src={[imagen]} alt="none" width={200} height={200}/>
   );
 };
 //Esta función sirve para evaluar quién ganó y aumentar el puntaje del ganador.
@@ -136,12 +138,13 @@ const Resultado = (props) => {//recibe como props la elección del jugador 1 y d
     props.jugador2.derrota === props.jugador.eleccion &&
     props.jugador.eleccion
   ) {
-     scorePlayer2 = scorePlayer2+1;//aumenta el puntaje del Jugador 2
+    scorePlayer2 = scorePlayer2+1;//aumenta el puntaje del Jugador 2
     resultadoFinal = <p>Ganador: Jugador 2</p>;
   } else if (
     props.jugador.eleccion === props.jugador2.eleccion &&
     props.jugador.eleccion
   ) {
+    empates++;
     resultadoFinal = <p>Empate</p>;
   }else{   //esto sirve para que, al darle en reiniciar, muestre un mensaje vacío.
     resultadoFinal = <p> </p>
@@ -150,8 +153,11 @@ const Resultado = (props) => {//recibe como props la elección del jugador 1 y d
   return (
     <>
         <h1>{resultadoFinal}</h1>
-        <p>Puntaje Jugador 1: {scorePlayer1/2}</p>
-        <p>Puntaje Jugador 2: {scorePlayer2/2}</p>
+        <div className="marcadorCvC">
+          <p>Puntaje Jugador 1: {scorePlayer1}</p>
+          <p>Empates: {empates}</p>
+          <p>Puntaje Jugador 2: {scorePlayer2}</p>
+        </div>
     </>
   );
 };

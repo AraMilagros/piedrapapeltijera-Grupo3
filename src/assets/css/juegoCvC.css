@@ -1,0 +1,41 @@
+h1 {
+    text-align: center;
+  }
+
+  
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    column-gap: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  
+  main > section {
+    border: 1px solid black;
+    padding: 30px;
+  }
+  
+  .jugador,
+  .jugador2 {
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  
+  .opcion {
+    display: flex;
+    height: 20px; 
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+  .marcadorCvC {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: auto;
+  }

@@ -31,6 +31,10 @@ h1 {
     align-items: center;
     padding: 40px;
   }
+
+  .opcion button{
+    margin-left: 1rem;
+  }
   .marcadorCvC {
     display: flex;
     width: 80%;

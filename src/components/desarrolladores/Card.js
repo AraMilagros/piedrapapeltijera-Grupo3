@@ -11,7 +11,7 @@ function Card({imageSource, title, presentation, url}) {
       </div>
       <div className="card-body text-ligth">
         <h4 className="titulo">{title}</h4>
-        <p className="presentacion ">{presentation}</p>
+        <p className="presentacion">{presentation}</p>
         <a href={url ? url : "#!"} target="_blank" className="btn btn-outline-secondary border-0" rel="noreferrer">Ir a GitHub</a>
       </div>
     </div>

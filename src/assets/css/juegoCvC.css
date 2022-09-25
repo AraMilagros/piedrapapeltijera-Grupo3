@@ -42,6 +42,7 @@ h1 {
     align-items: center;
     padding: 30px;
   }
+
   .marcador2 {
     display: flex;
     width: 80%;
@@ -49,4 +50,21 @@ h1 {
     font-size: 20px;
     font-weight: bolder;
     margin: auto;
+  }
+
+  .opciones-jugadores{
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .opc-jug1, .opc-jug2{
+    display: flex;
+  }
+
+  .btn-reinicio{
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
   }

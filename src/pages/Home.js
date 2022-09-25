@@ -1,9 +1,11 @@
 import '../assets/css/Home.css';
-
 export default function Home() {
   return (
     <>
     
+export default function Home() {
+  return (
+    <>
         <div className="portada">
           <h1>PIEDRA PAPEL O TIJERAS</h1>
           <img src="./img/PPT.gif" alt="" />

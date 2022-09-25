@@ -64,7 +64,7 @@ const eleccionPlayer2 = (event) => {
         <section>
           <div className="jugador">Jugador 1</div>
           <div className="eleccion">
-            <ImgEleccionJugador jugador={eleccionJugador}/>
+            <ImgEleccionJugador jugador={eleccionJugador}/>{/**esto muestra la imagen que los jugadores eligieron */}
           </div>
         </section>
         <section>

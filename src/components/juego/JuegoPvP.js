@@ -8,7 +8,7 @@ let scorePlayer2 = 0;
 let empates = 0;
 //estas variables booleanas sirven para decidir si mostrar o no las elecciones de los jugadores
 let eligioPlayer2 = false;//dice si el Jugador2 ya eligió una opción
-let eligioPlayer1 =false;//dice si el Jugador1 ya eligió una opción
+let eligioPlayer1 = false;//dice si el Jugador1 ya eligió una opción
 let primeraVez = true;//nos dice si es la primera ronda.
 
 function JuegoPvP() {
@@ -32,17 +32,17 @@ function JuegoPvP() {
       derrota: "papel",
     },
   ];
-  
+
   //A esta función se le pasa el evento "event" para que se ejecute al hacer click
   const eleccionPlayer1 = (event) => {
     const jugador = opciones.find((e) => e.eleccion === event.target.textContent);//Esto hace que el primer elemento del array cuyo parámetro "elección" sea igual a "textContent" lo devuelve y lo asigna a la variable const Jugador(.find busca en el array)
     setEleccionJugador(jugador);
-    eligioPlayer1=true;
+    eligioPlayer1 = true;
   };
 
-//Lo mismo que el método anterior pero para el Jugador2
-const eleccionPlayer2 = (event) => {
-  const jugador2 = opciones.find((e) => e.eleccion === event.target.textContent);
+  //Lo mismo que el método anterior pero para el Jugador2
+  const eleccionPlayer2 = (event) => {
+    const jugador2 = opciones.find((e) => e.eleccion === event.target.textContent);
     setEleccionJugador2(jugador2);
     eligioPlayer2 = true;
   };
@@ -56,33 +56,38 @@ const eleccionPlayer2 = (event) => {
     empates = 0;
     primeraVez = true;
   }
-  
+
   return (
     <div className="JuegoPvP">
-      <Resultado jugador={eleccionJugador} jugador2={eleccionJugador2}/>
+      <Resultado jugador={eleccionJugador} jugador2={eleccionJugador2} />
       <main>
         <section>
           <div className="jugador">Jugador 1</div>
           <div className="eleccion">
-            <ImgEleccionJugador jugador={eleccionJugador}/>{/**esto muestra la imagen que los jugadores eligieron */}
+            <ImgEleccionJugador jugador={eleccionJugador} />{/**esto muestra la imagen que los jugadores eligieron */}
           </div>
         </section>
         <section>
           <div className="jugador2">Jugador 2</div>
           <div className="eleccion">
-            <ImgEleccionJugador2 jugador2={eleccionJugador2}/>
+            <ImgEleccionJugador2 jugador2={eleccionJugador2} />
           </div>
         </section>
       </main>
-      <div className="opciones">
-        {opciones.map((e,i) => (//e:es el elemento. i:el índice
-          <OpcionPvP key={i} elegir={eleccionPlayer1} valor={e} />
-        ))}
-        {opciones.map((e,i) => (//e:es el elemento. i:el índice
-          <OpcionPvP key={i} elegir={eleccionPlayer2} valor={e} />
-        ))}
-        <button className="btn btn-danger" onClick={reiniciarJuego}>Reiniciar</button>
+
+      <div className="opciones-jugadores">
+        <div className="opc-jug1">
+          {opciones.map((e, i) => (//e:es el elemento. i:el índice
+            <OpcionPvP key={i} elegir={eleccionPlayer1} valor={e} />
+          ))}
+        </div>
+        <div className="opc-jug2">
+          {opciones.map((e, i) => (//e:es el elemento. i:el índice
+            <OpcionPvP key={i} elegir={eleccionPlayer2} valor={e} />
+          ))}
+        </div>
       </div>
+      <div className="btn-reinicio"><button className="btn btn-danger" onClick={reiniciarJuego}>Reiniciar</button></div>
       
     </div>
   );
@@ -101,22 +106,22 @@ const ImgEleccionJugador = (props) => {
   } else if (
     props.jugador.eleccion === "tijera") {
     imagen = "../img/scissors.png";
-  }else{
+  } else {
     imagen = "../img/none.png"
   }
-//si es la primera vez que se juegue mostrará la imagen por defecto. de no estar este if el cuadro de jugador1 estará vacio
-  if (primeraVez){
+  //si es la primera vez que se juegue mostrará la imagen por defecto. de no estar este if el cuadro de jugador1 estará vacio
+  if (primeraVez) {
     primeraVez = false;//se cambia a false para que no vuelva a entrar por este if
     return (
-      <img src={[imagen]} alt="none" width={200} height={200}/>
+      <img src={[imagen]} alt="none" width={200} height={200} />
     );
   }
- //muestra la imagen de la eleccion del jugador1 si y solo si ambos jugadores ya eligieron una opción
-  if (eligioPlayer2 && eligioPlayer1){
-    eligioPlayer2=false;
-    eligioPlayer1=false;
+  //muestra la imagen de la eleccion del jugador1 si y solo si ambos jugadores ya eligieron una opción
+  if (eligioPlayer2 && eligioPlayer1) {
+    eligioPlayer2 = false;
+    eligioPlayer1 = false;
     return (
-      <img src={[imagen]} alt="none" width={200} height={200}/>
+      <img src={[imagen]} alt="none" width={200} height={200} />
     );
   }
 };
@@ -133,13 +138,13 @@ const ImgEleccionJugador2 = (props) => {
   } else if (
     props.jugador2.eleccion === "tijera") {
     imagen = "../img/scissors.png";
-  }else{
+  } else {
     imagen = "../img/none.png";
   }
-//muestra la imagen de la elección del jugador2 si y solo si ambos jugadores no eligieron una opción. Se evalúa de esta manera porque cuando se muestran las imagen del jugador1 se pusieron ambas variables en false.
-  if (!eligioPlayer2 && !eligioPlayer1){
+  //muestra la imagen de la elección del jugador2 si y solo si ambos jugadores no eligieron una opción. Se evalúa de esta manera porque cuando se muestran las imagen del jugador1 se pusieron ambas variables en false.
+  if (!eligioPlayer2 && !eligioPlayer1) {
     return (
-      <img src={[imagen]} alt="none" width={200} height={200}/>
+      <img src={[imagen]} alt="none" width={200} height={200} />
     );
   }
 };
@@ -150,7 +155,7 @@ const Resultado = (props) => {//recibe como props la elección del jugador 1 y d
   if (props.jugador.derrota === props.jugador2.eleccion && props.jugador.eleccion//evalúa que el elemento al que derrota, la eleccion del jugador 1, sea igual a la elección del jugador2. lo que sigue después de && es para verificar que la haya una elección, es decir que no este vacío. Lo mismo en los demás condicionales
   ) {
     //Sólo aumenta el puntaje si ambos jugadores ya escogieron una opción. De no ser así los puntajes no serían correctos
-    if(eligioPlayer2 && eligioPlayer1){
+    if (eligioPlayer2 && eligioPlayer1) {
       scorePlayer1++;//aumenta el puntaje del Jugador 1
     }
     resultadoFinal = <p>Ganador: Jugador 1</p>;// se guarda en la variable resultadoFinal el mensaje
@@ -159,7 +164,7 @@ const Resultado = (props) => {//recibe como props la elección del jugador 1 y d
     props.jugador.eleccion
   ) {
     //Sólo aumenta el puntaje si ambos jugadores ya escogieron una opción. De no ser así los puntajes no serían correctos
-    if(eligioPlayer2 && eligioPlayer1){
+    if (eligioPlayer2 && eligioPlayer1) {
       scorePlayer2++;//aumenta el puntaje del Jugador 2
     }
     resultadoFinal = <p>Ganador: Jugador 2</p>;
@@ -169,18 +174,18 @@ const Resultado = (props) => {//recibe como props la elección del jugador 1 y d
   ) {
     empates++;
     resultadoFinal = <p>Empate</p>;
-  }else{   //esto sirve para que, al darle en reiniciar, muestre un mensaje vacío.
+  } else {   //esto sirve para que, al darle en reiniciar, muestre un mensaje vacío.
     resultadoFinal = <p> </p>
   }
-// devuelve o muestra el mensaje y los puntajes de cada jugador
+  // devuelve o muestra el mensaje y los puntajes de cada jugador
   return (
     <>
-        <h1>{resultadoFinal}</h1>
-        <div className="marcador2">
-          <p>Puntaje Jugador 1: {scorePlayer1}</p>
-          <p>Empates: {empates}</p>
-          <p>Puntaje Jugador 2: {scorePlayer2}</p>
-        </div>
+      <h1>{resultadoFinal}</h1>
+      <div className="marcador2">
+        <p>Puntaje Jugador 1: {scorePlayer1}</p>
+        <p>Empates: {empates}</p>
+        <p>Puntaje Jugador 2: {scorePlayer2}</p>
+      </div>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../components/desarrolladores/Card";
-
+import Header from "../components/Header";
 //import image1 from "../assets/img/desarrolladores/image1.jpg";
 import "../assets/css/card.css";
 
@@ -12,6 +12,7 @@ import image5 from "../assets/img/desarrolladores/image5.jpg";
 import image6 from "../assets/img/desarrolladores/image6.jpg";
 
 import '../assets/css/card.css';
+
 
 const desarrollador = [
   {
@@ -61,6 +62,7 @@ const desarrollador = [
 function Desarrolladores() {
   return (
     <>
+      <Header/>
       <div className="container d-flex align-items-center h-100">
         <div className="row">
           {desarrollador.map(({title, image, presentation, url, id}) => (<div className="col-md-4" key={id}><Card imageSource={image} title={title} presentation={presentation} url={url}/></div>))}

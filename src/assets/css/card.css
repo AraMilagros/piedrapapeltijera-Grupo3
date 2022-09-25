@@ -20,6 +20,7 @@
 }
 .overflow {
   overflow: hidden;
+  min-height: 215px;
 }
 .card-img-top{
   transform: scale(1);

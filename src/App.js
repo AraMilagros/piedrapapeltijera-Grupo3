@@ -20,8 +20,6 @@ function App() {
             o si quiere ver quiénes desarrollaron el juego, se llamara el componente respectivo
             
             Esto se logra con router*/}
-            {/* Este seria el nav */}
-            <Header/>
             <Router>
                 <Routes>
                     {/* Aqui se llama el componente que muestra el inicio del juego..la portada */}

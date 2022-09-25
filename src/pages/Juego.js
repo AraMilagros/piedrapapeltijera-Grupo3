@@ -33,7 +33,7 @@ export default function Juego(){
                     </li>
 
                 </ul>
-                <h1>Piedra, Papel o Tijeras</h1>
+                {/* <h1>Piedra, Papel o Tijeras</h1> */}
                 <div className="tab-content" id="myTabContent">
                     <div className="tab-pane fade show active" id="cvc-tab-pane" role="tabpanel" aria-labelledby="cvc-tab" tabIndex="0"><JuegoCvC /></div>
                     <div className="tab-pane fade" id="pvc-tab-pane" role="tabpanel" aria-labelledby="pvc-tab" tabIndex="0"><JuegoPvC img={[rock, paper, scissors, none]} /></div>

@@ -6,11 +6,10 @@
   background: wheat;
 }
 .card:hover {
-    box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0.273) !important;
-    transition: all 0.7s linear;
-  }
+  box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0.273) !important;
+  transition: all 0.7s linear;
+}
 .card-body {
-  height:50%;
   padding: 2rem 0 !important;
 }
 .presentacion {
@@ -30,9 +29,9 @@
   transform: scale(1.8);
 }
 .col-md-4{
-  height: 90vh;
+  margin-top: 2%;
+  height: 100%;
 }
 .card{
-  margin-top: 20px;
-  height: 90%;
+  height: 65vh;
 }

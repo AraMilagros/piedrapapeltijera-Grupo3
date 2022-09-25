@@ -20,19 +20,19 @@ export default function Juego(){
                     <a href="/jugar/cvc" className="nav-link  " role="button">Juego CvC</a>
                 </li>
             </ul> */}
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="cvc-tab" data-bs-toggle="tab" data-bs-target="#cvc-tab-pane" type="button" role="tab" aria-controls="cvc-tab-pane" aria-selected="true">Juego CvC</button>
+                <ul className="nav nav-tabs" id="myTab" role="tablist">
+                    <li className="nav-item" role="presentation">
+                        <button className="nav-link active" id="cvc-tab" data-bs-toggle="tab" data-bs-target="#cvc-tab-pane" type="button" role="tab" aria-controls="cvc-tab-pane" aria-selected="true">Juego CvC</button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pvc-tab" data-bs-toggle="tab" data-bs-target="#pvc-tab-pane" type="button" role="tab" aria-controls="pvc-tab-pane" aria-selected="false">Juego PvC</button>
+                    <li className="nav-item" role="presentation">
+                        <button className="nav-link" id="pvc-tab" data-bs-toggle="tab" data-bs-target="#pvc-tab-pane" type="button" role="tab" aria-controls="pvc-tab-pane" aria-selected="false">Juego PvC</button>
                     </li>
 
                 </ul>
                 <h1>Piedra, Papel o Tijeras</h1>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="cvc-tab-pane" role="tabpanel" aria-labelledby="cvc-tab" tabindex="0"><JuegoCvC /></div>
-                    <div class="tab-pane fade" id="pvc-tab-pane" role="tabpanel" aria-labelledby="pvc-tab" tabindex="0"><JuegoPvC img={[rock, paper, scissors, none]} /></div>
+                <div className="tab-content" id="myTabContent">
+                    <div className="tab-pane fade show active" id="cvc-tab-pane" role="tabpanel" aria-labelledby="cvc-tab" tabIndex="0"><JuegoCvC /></div>
+                    <div className="tab-pane fade" id="pvc-tab-pane" role="tabpanel" aria-labelledby="pvc-tab" tabIndex="0"><JuegoPvC img={[rock, paper, scissors, none]} /></div>
                     
                 </div>
         </nav>
